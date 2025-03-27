@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Search Comparison</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 18px;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 12px;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #0073e6;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Comparison of Standard vs. Alternative Binary Search</h2>
+
+    <table>
+      <tr>
+        <th>Criteria</th>
+        <th>Standard Binary Search</th>
+        <th>Alternative Binary Search</th>
+      </tr>
+      <tr>
+        <td><strong>Equality Check </strong></td>
+        <td>
+          Checks whether the middle element (A[m]) is equal to the target (T) in
+          every iteration.
+        </td>
+        <td>
+          Leaves out this check in every iteration, only verifying when L = R.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Number of Iterations </strong></td>
+        <td>
+          Performs fewer iterations as it stops immediately when the target is
+          found.
+        </td>
+        <td>
+          May require one extra iteration on average due to skipping the
+          equality check.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Best for General Use</strong></td>
+        <td>
+          Ideal for most scenarios where a simple and intuitive approach is
+          preferred.
+        </td>
+        <td>Useful when minimizing per-iteration comparisons is crucial.</td>
+      </tr>
+      <tr>
+        <td><strong>Performance Optimization</strong></td>
+        <td>
+          Slightly more comparisons per iteration but usually finishes in fewer
+          iterations.
+        </td>
+        <td>
+          Reduces the number of comparisons in each iteration but may take one
+          extra step on average.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Readability & Implementation</strong></td>
+        <td>
+          Easier to understand, widely used, and found in standard libraries.
+        </td>
+        <td>
+          More optimized but slightly harder to grasp due to the delayed
+          equality check.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Real-world Usage</strong></td>
+        <td>
+          Commonly implemented in search functions across programming languages
+          and libraries.
+        </td>
+        <td>
+          Used in niche cases where every comparison counts, such as
+          high-performance computing.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>When to Use?</strong></td>
+        <td>
+          Use when clarity, maintainability, and early exit on finding the
+          target are priorities.
+        </td>
+        <td>
+          Use when optimizing the number of comparisons is essential, especially
+          for large datasets.
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
